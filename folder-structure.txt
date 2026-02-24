@@ -1,0 +1,94 @@
+ai-ready-crawler/
+│
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py
+│   │   ├── main.py
+│   │   ├── api/
+│   │   │   ├── __init__.py
+│   │   │   ├── models.py
+│   │   │   └── routes.py
+│   │   ├── crawler/
+│   │   │   ├── __init__.py
+│   │   │   ├── spider.py
+│   │   │   ├── processor.py
+│   │   │   ├── scheduler.py
+│   │   │   ├── tasks.py
+│   │   │   ├── extractor.py
+│   │   │   └── middleware.py
+│   │   ├── processing/
+│   │   │   ├── __init__.py
+│   │   │   ├── cleaner.py
+│   │   │   ├── chunker.py
+│   │   │   ├── deduplicator.py
+│   │   │   └── tagger.py
+│   │   ├── storage/
+│   │   │   ├── __init__.py
+│   │   │   ├── database.py
+│   │   │   ├── exporters.py
+│   │   │   └── vector_store.py
+│   │   └── utils/
+│   │       ├── __init__.py
+│   │       ├── config.py
+│   │       └── legal.py
+│   ├── alembic/
+│   │   ├── versions/
+│   │   ├── env.py
+│   │   └── README
+│   ├── alembic.ini
+│   ├── requirements.txt
+│   ├── Dockerfile
+│   ├── .env
+│   └── .env.example
+│
+├── frontend/
+│   ├── public/
+│   │   └── vite.svg
+│   ├── src/
+│   │   ├── main.jsx
+│   │   ├── App.jsx
+│   │   ├── theme.jsx
+│   │   ├── index.css
+│   │   ├── components/
+│   │   │   ├── Layout.jsx
+│   │   │   ├── StatusChip.jsx
+│   │   │   └── ProgressBar.jsx
+│   │   ├── pages/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── NewCrawl.jsx
+│   │   │   ├── Jobs.jsx
+│   │   │   ├── JobDetails.jsx
+│   │   │   └── Settings.jsx
+│   │   ├── hooks/
+│   │   │   └── useWebSocket.jsx
+│   │   ├── utils/
+│   │   │   └── formatters.jsx
+│   │   └── services/
+│   │       └── api.js
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── Dockerfile
+│   ├── Dockerfile.prod
+│   ├── nginx.conf
+│   └── .env.example
+│
+├── cli/
+│   ├── crawler_cli.py
+│   └── requirements.txt
+│
+├── root/
+│   ├── docker-compose.yml
+│   ├── docker-compose.prod.yml
+│   ├── nginx.prod.conf
+│   ├── .gitignore
+│   ├── .dockerignore
+│   ├── .pre-commit-config.yaml
+│   ├── pyproject.toml
+│   ├── Makefile
+│   └── README.md
+│
+└── data/                          # Created at runtime
+    ├── output/                    # Crawled data exports
+    └── vector_store/              # FAISS vector indices
